@@ -1,0 +1,615 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+/*=============== VARIÁVEIS CSS ===============*/
+:root {
+    --header-height: 4.5rem;
+    /* Cores (Tema Claro Padrão) */
+    --primary-color: #B98B82;
+    --primary-color-alt: #8B6B61;
+    --title-color: #4A3F3F;
+    --text-color: #7c6c68;
+    --body-color: #FDFBF8;
+    --container-color: #FFFFFF;
+    --whatsapp-color: #25D366;
+    --whatsapp-hover-color: #128C7E;
+    /* Tipografia */
+    --body-font: 'Plus Jakarta Sans', sans-serif;
+    --title-font: 'Playfair Display', serif;
+    /* Tipografia Fluida */
+    --base-font-size: clamp(0.9375rem, 0.89rem + 0.24vw, 1rem);
+    --biggest-font-size: clamp(2.5rem, 6vw, 4.5rem);
+    --h1-font-size: clamp(1.75rem, 5vw, 2.75rem);
+    --h2-font-size: clamp(1.5rem, 4vw, 2.25rem);
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    /* Pesos da Fonte */
+    --font-medium: 500;
+    --font-bold: 700;
+    /* Espaçamento Fluido */
+    --section-padding-block: clamp(4rem, 10vw, 8rem);
+    /* Z-index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*=============== BASE E RESET ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--base-font-size);
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--title-font);
+    color: var(--title-color);
+    line-height: 1.2;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*=============== COMPONENTES REUTILIZÁVEIS ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: var(--section-padding-block);
+}
+
+.section__title,
+.section__subtitle {
+    text-align: center;
+}
+
+.section__subtitle {
+    display: block;
+    color: var(--primary-color);
+    font-family: var(--body-font);
+    font-weight: var(--font-medium);
+    margin-bottom: 0.5rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1.15rem 2.5rem;
+    border-radius: 5rem;
+    font-weight: var(--font-medium);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background-color: var(--primary-color-alt);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(185, 139, 130, 0.3);
+}
+
+.button--link {
+    background: none;
+    color: var(--primary-color);
+    padding: 0;
+}
+
+.button--link:hover {
+    background: none;
+    transform: none;
+    box-shadow: none;
+    color: var(--primary-color-alt);
+}
+
+.button--large {
+    padding: 1.5rem 4rem;
+    font-size: 1.1rem;
+}
+
+.button i {
+    font-size: 1.25rem;
+    transition: transform .3s;
+}
+
+.button:hover i {
+    transform: translateX(5px);
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    font-weight: var(--font-bold);
+    font-family: var(--title-font);
+    font-size: 1.5rem;
+}
+
+.nav__toggle,
+.nav__close {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(80%, 400px);
+    height: 100vh;
+    background-color: rgba(253, 251, 248, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 6rem 2rem 0;
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.show-menu {
+    right: 0;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nav__link {
+    font-weight: var(--font-medium);
+    transition: color .3s;
+}
+
+.nav__link:hover {
+    color: var(--primary-color);
+}
+
+.nav__link--button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5rem;
+    text-align: center;
+}
+
+.nav__link--button:hover {
+    color: #fff;
+    background-color: var(--primary-color-alt);
+}
+
+.nav__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.scroll-header {
+    background-color: rgba(253, 251, 248, 0.8);
+    box-shadow: 0 2px 10px rgba(74, 63, 63, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/*=============== HERO ===============*/
+.hero {
+    background: url('https://placehold.co/1920x1080/f0e4e6/7c5e60?text=Beleza+%26+Estilo') no-repeat center center/cover;
+    position: relative;
+    padding-block: clamp(8rem, 20vh, 12rem) var(--section-padding-block);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(253, 251, 248, 0.6);
+}
+
+.hero__container {
+    position: relative;
+}
+
+.hero__content {
+    max-width: 650px;
+    text-align: center;
+    margin-inline: auto;
+}
+
+.hero__title {
+    margin-bottom: 1rem;
+}
+
+.hero__description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/*=============== SOBRE ===============*/
+.about__container {
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+}
+
+.about__image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    justify-self: center;
+    max-width: 400px;
+}
+
+.about__image::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--primary-color);
+    border-radius: 1rem;
+    z-index: -1;
+    transition: transform .4s;
+}
+
+.about__image:hover::before {
+    transform: translate(0.5rem, 0.5rem);
+}
+
+/*=============== SERVIÇOS ===============*/
+.services {
+    background-color: var(--container-color);
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(139, 107, 97, 0.1);
+    border-color: transparent;
+}
+
+.service-card__icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-card__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/*=============== GALERIA ===============*/
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery__item {
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s, filter .4s;
+}
+
+.gallery__item:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.1);
+}
+
+/*=============== DEPOIMENTOS (SWIPER) ===============*/
+.testimonials {
+    background-color: var(--container-color);
+}
+
+.testimonial-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.testimonial-card__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.testimonial-card__quote {
+    font-family: var(--title-font);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--title-color);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
+
+/*=============== CONTATO ===============*/
+.contact__container {
+    background-color: var(--primary-color-alt);
+    padding: clamp(2.5rem, 8vw, 4rem);
+    text-align: center;
+    border-radius: 2rem;
+    color: #fff;
+}
+
+.contact__container .section__title,
+.contact__container .contact__description {
+    color: #fff;
+}
+
+.contact__description {
+    max-width: 500px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+}
+
+.contact__container .button {
+    background-color: #fff;
+    color: var(--primary-color-alt);
+}
+
+.contact__container .button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    background-color: #F4F0EF;
+    padding-block-start: 4rem;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 2rem;
+}
+
+.footer__logo {
+    font-size: 1.5rem;
+    font-family: var(--title-font);
+    color: var(--title-color);
+}
+
+.footer__social {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.footer__social a {
+    transition: color .3s, transform .3s;
+}
+
+.footer__social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer__copy {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: var(--small-font-size);
+    color: #aaa;
+}
+
+/*=============== WHATSAPP FLOAT ===============*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--whatsapp-color);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    z-index: var(--z-fixed);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    animation: pulse 2.5s infinite 1.5s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(10deg);
+    background: var(--whatsapp-hover-color);
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*=============== DARK THEME ===============*/
+body.dark-theme {
+    --primary-color: #C8A2C8;
+    --primary-color-alt: #B082B0;
+    --title-color: #F1F1F1;
+    --text-color: #CFCFCF;
+    --body-color: #181818;
+    --container-color: #212121;
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__theme {
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.nav__theme:hover {
+    color: var(--primary-color);
+}
+
+.dark-theme .scroll-header,
+.dark-theme {
+    background-color: rgba(24, 24, 24, 0.8);
+}
+
+.dark-theme .service-card {
+    border-color: #333;
+}
+
+.dark-theme .footer {
+    background-color: var(--container-color);
+}
+
+.dark-theme .button:hover {
+    box-shadow: 0 10px 20px rgba(200, 162, 200, 0.2);
+}
+
+.dark-theme .hero::before {
+    background-color: rgba(24, 24, 24, 0.7);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .nav__menu {
+        all: unset;
+        display: block;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .nav__link--button {
+        display: none;
+    }
+
+    .nav__toggle,
+    .nav__close {
+        display: none;
+    }
+
+    .about__container {
+        grid-template-columns: 1fr 0.8fr;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .container {
+        padding-inline: 1.5rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 1rem);
+    }
+
+    .about__container {
+        grid-template-columns: 0.8fr 1fr;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .container {
+        max-width: 1200px;
+    }
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza & Estilo - Onde Sua Beleza Floresce</title>
+    <meta name="description"
+        content="Descubra um espaço dedicado a realçar sua beleza única. Conheça nossos serviços e agende sua transformação.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Beleza & Estilo</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link">Início</a></li>
+                    <li><a href="#about" class="nav__link">Sobre</a></li>
+                    <li><a href="#services" class="nav__link">Serviços</a></li>
+                    <li><a href="#gallery" class="nav__link">Galeria</a></li>
+                    <li><a href="#contact" class="nav__link nav__link--button">Agendar Horário</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class='bx bx-x'></i></div>
+            </div>
+
+            <div class="nav__actions">
+                <i class='bx bxs-moon nav__theme' id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle"><i class='bx bx-menu'></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Onde Sua Beleza Floresce</h1>
+                    <p class="hero__description">
+                        Mais que um salão, um refúgio para você se reconectar com sua melhor versão. Permita-se ser
+                        cuidada por especialistas que amam o que fazem.
+                    </p>
+                    <a href="#contact" class="button">
+                        Agende Sua Transformação <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <span class="section__subtitle">Nossa Essência</span>
+                    <h2 class="section__title">Criando Arte, Elevando a Autoestima</h2>
+                    <p class="about__description">
+                        No Beleza & Estilo, acreditamos que cada detalhe importa. Nosso espaço foi pensado para oferecer
+                        uma experiência relaxante e acolhedora, utilizando produtos de alta performance e as técnicas
+                        mais inovadoras do mercado.
+                    </p>
+                    <a href="#services" class="button button--link">Conheça os serviços <i
+                            class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="about__image">
+                    <img src="https://placehold.co/400x500/f0e4e6/7c5e60?text=Nosso+Espaço"
+                        alt="Interior do salão Beleza & Estilo">
+                </div>
+            </div>
+        </section>
+
+        <section class="services section" id="services">
+            <div class="container">
+                <span class="section__subtitle">Nossos Rituais</span>
+                <h2 class="section__title">Serviços Pensados para Você</h2>
+                <div class="services__grid">
+                    <div class="service-card"><i class='bx bx-cut service-card__icon'></i>
+                        <h3 class="service-card__title">Corte & Styling</h3>
+                        <p class="service-card__description">Consultoria visagista para um corte que harmoniza com seu
+                            estilo.</p>
+                    </div>
+                    <div class="service-card"><i class='bx bx-paint service-card__icon'></i>
+                        <h3 class="service-card__title">Coloração Premium</h3>
+                        <p class="service-card__description">Mechas, morena iluminada e as cores que são tendência.</p>
+                    </div>
+                    <div class="service-card"><i class='bx bx-spa service-card__icon'></i>
+                        <h3 class="service-card__title">Terapias Capilares</h3>
+                        <p class="service-card__description">Tratamentos profundos para a saúde e vitalidade dos seus
+                            fios.</p>
+                    </div>
+                    <div class="service-card"><i class='bx bxs-magic-wand service-card__icon'></i>
+                        <h3 class="service-card__title">Maquiagem Social</h3>
+                        <p class="service-card__description">Realce sua beleza para eventos especiais com técnicas
+                            profissionais.</p>
+                    </div>
+                    <div class="service-card"><i class='bx bx-hand service-card__icon'></i>
+                        <h3 class="service-card__title">Nail Design</h3>
+                        <p class="service-card__description">Manicure e pedicure com as últimas tendências em esmaltação
+                            e nail art.</p>
+                    </div>
+                    <div class="service-card"><i class='bx bx-happy-heart-eyes service-card__icon'></i>
+                        <h3 class="service-card__title">Design de Olhar</h3>
+                        <p class="service-card__description">Sobrancelhas e cílios perfeitos para um olhar marcante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery section" id="gallery">
+            <div class="container">
+                <span class="section__subtitle">Inspire-se</span>
+                <h2 class="section__title">Nossas Transformações</h2>
+                <div class="gallery__grid">
+                    <div class="gallery__item"><img src="https://placehold.co/600x600/f0e4e6/7c5e60?text=Cabelo+1"
+                            alt="Trabalho de coloração"></div>
+                    <div class="gallery__item"><img src="https://placehold.co/600x600/f0e4e6/7c5e60?text=Maquiagem+1"
+                            alt="Maquiagem profissional"></div>
+                    <div class="gallery__item"><img src="https://placehold.co/600x600/f0e4e6/7c5e60?text=Unha+1"
+                            alt="Design de unhas"></div>
+                    <div class="gallery__item"><img src="https://placehold.co/600x600/f0e4e6/7c5e60?text=Cabelo+2"
+                            alt="Corte e estilo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials section">
+            <div class="container">
+                <span class="section__subtitle">Confiança</span>
+                <h2 class="section__title">O que nossas clientes dizem</h2>
+                <div class="swiper testimonials__slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide testimonial-card"><img
+                                src="https://placehold.co/100x100/f0e4e6/7c5e60?text=Cliente"
+                                alt="Foto da cliente Maria Silva" class="testimonial-card__img">
+                            <p class="testimonial-card__quote">"Nunca me senti tão linda e confiante! A equipe é
+                                maravilhosa e o ambiente é um sonho. Recomendo de olhos fechados."</p>
+                            <h4 class="testimonial-card__author">- Maria Silva</h4>
+                        </div>
+                        <div class="swiper-slide testimonial-card"><img
+                                src="https://placehold.co/100x100/f0e4e6/7c5e60?text=Cliente"
+                                alt="Foto da cliente Ana Santos" class="testimonial-card__img">
+                            <p class="testimonial-card__quote">"Profissionais que realmente entendem do assunto. O
+                                resultado da minha coloração ficou exatamente como eu queria. Virei fã!"</p>
+                            <h4 class="testimonial-card__author">- Ana Santos</h4>
+                        </div>
+                        <div class="swiper-slide testimonial-card"><img
+                                src="https://placehold.co/100x100/f0e4e6/7c5e60?text=Cliente"
+                                alt="Foto da cliente Juliana Costa" class="testimonial-card__img">
+                            <p class="testimonial-card__quote">"O melhor tratamento capilar que já fiz na vida. Meu
+                                cabelo está super saudável e brilhante. Atendimento impecável."</p>
+                            <h4 class="testimonial-card__author">- Juliana Costa</h4>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <h2 class="section__title">Vamos conversar?</h2>
+                <p class="contact__description">Estamos prontas para agendar seu momento de autocuidado. Clique no botão
+                    abaixo e fale conosco diretamente pelo WhatsApp.</p>
+                <a href="https://wa.me/5581996221060?text=Olá! Gostaria de agendar um horário no salão Beleza & Estilo."
+                    class="button button--large" target="_blank">
+                    <i class='bx bxl-whatsapp'></i> Agendar pelo WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Beleza & Estilo</a>
+                <p>📍 Rua das Flores, 123 - Centro <br> Seg-Sáb: 9h às 19h</p>
+            </div>
+            <div class="footer__social">
+                <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-facebook-square'></i></a>
+            </div>
+        </div>
+        <p class="footer__copy">&#169; 2025 Beleza & Estilo. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5581996221060?text=Olá! Quero agendar um horário." class="whatsapp-float" target="_blank">
+        <i class='bx bxl-whatsapp'></i>
+    </a>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
