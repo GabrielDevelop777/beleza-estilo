@@ -238,7 +238,7 @@ img {
 
 /*=============== HERO ===============*/
 .hero {
-    background: url('https://placehold.co/1920x1080/f0e4e6/7c5e60?text=Beleza+%26+Estilo') no-repeat center center/cover;
+    background: url('https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
     position: relative;
     padding-block: clamp(8rem, 20vh, 12rem) var(--section-padding-block);
 }
@@ -309,6 +309,7 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .service-card {
@@ -341,6 +342,8 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
 }
 
 .gallery__item {
